@@ -1,0 +1,18 @@
+STEP 1:JWT Application Setup
+a ) create an app
+b ) Generate a Public / Private Keypair
+c) Grant Access for the Application in Your Enterprise
+https://developer.box.com/docs/setting-up-a-jwt-app#section-step-3-grant-access-for-the-application-in-your-enterprise
+Master control page : https://app.box.com/master/settings/custom
+
+STEP 2: Install Node package
+npm install --save box-node-sdk
+
+STEP 3 : Authenticate with JWT (SDK)
+https://developer.box.com/docs/authenticate-with-jwt
+
+STEP 4 : Work with Files
+https://developer.box.com/docs/work-with-files
+
+STEP 5 : goto https://app.box.com/master/content
+to check content 
