@@ -16,3 +16,49 @@ https://developer.box.com/docs/work-with-files
 
 STEP 5 : goto https://app.box.com/master/content
 to check content 
+===================================================================
+**************************define class *************************
+// https://jsonplaceholder.typicode.com/todos/1
+
+import * as https from "https"
+export class CT{
+    async getData(url:string){
+      var output ;
+
+      let promise = new Promise((resolve, reject) => {
+        https.get(url, (resp) => {
+          let data = '';
+    
+      // A chunk of data has been recieved.
+       resp.on('data', (chunk) => {
+        data += chunk;
+      });
+    
+      // The whole response has been received. Print out the result.
+      resp.on('end', () => {
+        output= JSON.parse(data)
+        resolve('Done')
+      });
+    
+    }).on("error", (err) => {
+      console.log("Error: " + err.message);
+    });
+      });
+
+      await promise;
+      
+      return output
+    }
+}
+
+=========================================================
+******************call async method *******************
+import { CT } from "./c";
+
+console.log("abhinay")
+
+var a = new CT();
+var url = 'https://jsonplaceholder.typicode.com/todos/1'
+var output = a.getData(url).then((data)=>{
+    console.log("data",data)
+});
